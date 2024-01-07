@@ -1,4 +1,5 @@
 from tabulate import tabulate
+import pandas as pd
 
 def formatar__tabela(df):
     '''Retorna um tabela formatada para string
