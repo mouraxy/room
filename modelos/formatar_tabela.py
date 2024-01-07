@@ -33,18 +33,19 @@ def gerar__metadados(df):
 
     # cria um dataframe com algumas estatisticas
     df_metadados = pd.DataFrame({
-    'Variável': tipo_dados.index,
-    'Tipos de dados': tipo_dados.values,
-    'Nulos': qtde_nulos.values,
-    'Mínimo': estatisticas['min'],
-    'Máximo': estatisticas['max'],
-    'Média': estatisticas['mean'],
+        'Variável': tipo_dados.index,
+        'Tipos de dados': tipo_dados.values,
+        'Nulos': qtde_nulos.values,
+        'Valores distintos': df.nunique().values,
+        'Mínimo': estatisticas['min'],
+        'Máximo': estatisticas['max'],
+        'Média': estatisticas['mean']
     })
 
     print(f'\n\nO DataFrame possui {df.shape[1]} colunas e {df.shape[0]} linhas:')
     print(formatar__tabela(df_metadados))
 
-def calcular_duplicidades(df, figsize_x=7.7, figsize_y=2):
+def calcular__duplicidades(df, figsize_x=7.7, figsize_y=2):
     '''
     Retorna a quantidade, porcentagem e um mapa de calor das duplicatas
     Parametros:
