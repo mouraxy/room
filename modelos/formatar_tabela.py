@@ -44,7 +44,7 @@ def gerar__metadados(df):
     print(f'\n\nO DataFrame possui {df.shape[1]} colunas e {df.shape[0]} linhas:')
     print(formatar__tabela(df_metadados))
 
-def calcular__duplicidades(df):
+def calcular_duplicidades(df, figsize_x=7.7, figsize_y=2):
     '''
     Retorna a quantidade, porcentagem e um mapa de calor das duplicatas
     Parametros:
@@ -56,7 +56,7 @@ def calcular__duplicidades(df):
     print(f'\n\nDuplicatas: {len(duplicatas)} ({porcentagem_duplicatas:.2f}%)')
 
     # cria um mapa de calor
-    plt.figure(figsize=(7.7, 2))
+    plt.figure(figsize=(figsize_x, figsize_y))
     sns.heatmap(
         df.duplicated().to_frame().transpose(),
         cmap='binary',
