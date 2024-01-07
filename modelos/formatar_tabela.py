@@ -40,5 +40,3 @@ def gerar__metadados(df):
 
     print(f'\n\nO DataFrame possui {df.shape[1]} colunas e {df.shape[0]} linhas:')
     print(formatar__tabela(df_metadados))
-
-gerar__metadados(df_origem)
